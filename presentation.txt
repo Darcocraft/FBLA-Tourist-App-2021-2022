@@ -1,0 +1,43 @@
+Show 
+	source code
+		-show comments
+	documentation of libraries (Mapbox & Foursquare)
+	documentation/help menugr
+		(invites uses of advanced features)
+		-multiple methods of accomplishing things
+	(if-then sequence that saves the user steps)
+	dynamic storage backup
+		-caching location data
+			-on internet failure
+		-saving favorited places to system memory
+	dynamicly updating program results (once search is changed)
+	output display allows user to customize and analyze information
+
+
+
+Introduction
+How to run the app
+	-Why it is a web app
+talk about External APIs
+how program Initializes
+	-auto cycles through to give user ideas and jumpstart their search
+Ways to set search location
+	-drag magnifying glass
+	-use Lon/Lat input
+	-Use current location button
+Things to do search queries (updates dynamically (i.e. as inputs change))
+	-maximum distance search
+	-Location Type (categories --> subcats)
+	-Our suggestion (based off of highest rating)
+Returns at most 50 best-matching attractions.
+Brief location info
+Favoriting locations
+	-stores it to local browser storage
+	-refresh page
+Location caching
+	-turn off internet connection
+Use Help Guide
+	-explain FAQ
+	-show api docs
+Show code
+	-show if-then sequence to save user steps.

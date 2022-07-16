@@ -1,0 +1,14 @@
+body {
+  background-color: #75cff0;
+  padding: 10px;
+}
+
+.indent {
+  background-color: beige;
+  padding: 10px;
+  margin: 5px;
+  margin-bottom: 10px;
+  padding-left: 22px;
+  border: 4px solid #c6c6ae;
+  border-radius: 5px;
+}

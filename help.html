@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="res/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="res/css/help.css" />
+    <title>Help</title>
+  </head>
+  <body>
+    <h1>Welcome to the Help Page</h1>
+    <h2>FAQ</h2>
+    <div class="indent">
+      <h3>How do I navigate on the map?</h3>
+      <div class="indent">
+        <h4>Set Search Location</h4>
+        <p>
+          First, to begin searching for local attractions, you must set your
+          starting location to search from. Here are the various ways to
+          accomplish this:
+        </p>
+        <ol>
+          <li>Drag the magnifying glass icon to a desired map location.</li>
+          <li>
+            Use the Lon/Lat input at the top right to enter in a desired search
+            longitude and latitude on the map.
+          </li>
+          <li>
+            Click on the magnifying glass icon and click the "Use My Location
+            button" and then allow on the popup.
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="indent">
+      <h4>Find Things to Do!</h4>
+      <p>
+        After setting your search from location, you can then set various
+        parameters to find attractions in your local area. Use the +/- button to
+        minimize/maximize (respectively) the search location parameters. When
+        maximized, there are several search parameters to use to search for the
+        most fitting location.
+      </p>
+      <div class="indent">
+        <h4>Distance Search</h4>
+        <p>
+          Use this input to specify a desired maximum distance in miles for
+          returned locations.
+        </p>
+      </div>
+      <div class="indent">
+        <h4>Location Type</h4>
+        <p>
+          First, select a main category for what kinds of locations you are
+          searching for. After selecting a main category, the following
+          subcategory input will begin to briefly cycle through corresponding
+          subcategories, and randomly choose to search one. You can stop this
+          cycling by waiting for it to naturally end or by clicking on the
+          subcategory select box while it is being cycled through. You can also
+          use the subcategory select box to specify a specific subcategory of
+          your liking.
+        </p>
+      </div>
+      <div class="indent">
+        <h4>Our Suggestion</h4>
+        <p>
+          Click on the link to select the suggested location. Suggestions are
+          based off of the highest rated place matching the other specified
+          criteria.
+        </p>
+      </div>
+    </div>
+    <div class="indent">
+      <h3>How can I save a location for later?</h3>
+      <p>
+        To save a location for later, select the location and click the star
+        icon at the top right to favorite it. This will turn the corresponding
+        location marker yellow. Favorited markers will not disappear when
+        location search queries are changed, including when the search marker is
+        relocated. Favorited locations are saved across app sessions, meaning
+        that closing and reopening the app will keep favorited locations.
+      </p>
+    </div>
+    <div class="indent">
+      <h3>Can I still use the app if I lose Internet Connection?</h3>
+      <p>
+        While an Internet connection is required to initially load the map data
+        for the app, if Internet connection ceases after successfully searching
+        for a few locations, the app will continue to display cached locations
+        that had previously been loaded in the current app session.
+      </p>
+    </div>
+    <h2>Acknowledgements</h2>
+    <p>
+      This app makes use of two external APIs. The
+      <a href="https://docs.mapbox.com/mapbox-gl-js/guides/"
+        >Mapbox GL JS API</a
+      >
+      is used to create and render the app's map and location markers. The
+      <a href="https://developer.foursquare.com/docs/places-api-overview"
+        >Foursquare Places API</a
+      >
+      is used to search for local points of interest and receive information
+      about each of them
+    </p>
+  </body>
+</html>

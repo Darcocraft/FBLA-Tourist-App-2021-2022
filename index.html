@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Loads Styles -->
+    <link rel="stylesheet" type="text/css" href="res/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="res/css/carousel.css" />
+
+    <!-- Loads Mapbox -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <!-- Loads Geocoder Search Api -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+
+    <!-- Loads Directions Api
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+      type="text/css"
+    /> -->
+
+    <!-- Loads Turf.js Api -->
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+
+    <title>Tourism App</title>
+  </head>
+
+  <body>
+    <!-- Location Info Sidebar -->
+    <div class="sidebar" id="content-sidebar">
+      <div id="sidebarControls-container">
+        <div class="backbtn" onclick="restoreCardView()">&#60</div>
+        <div class="closebtn  tooltip" onclick="closeSidebar()">×
+          <span class="tooltiptext">Close Sidebar</span>
+        </div>
+      </div>
+      <div>
+        <div id="locationInfo-container">
+          <div id="locationCard-container">
+            <div id="favoriteLocations-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main" id="main">
+
+      <!-- Search Query Parameters -->
+      <div id="locationSearch-container">
+        <span>Search Location Parameters</span>
+        <button class="collapseToggle active ">-</button>
+        <div class="collapseContent">
+          <!-- Distance Input -->
+          <label>Distance: </label>
+          <input
+            value="10"
+            min="0"
+            max="50"
+            id="searchRadiusInput"
+            type="number"
+            placeholder="Type Search Distance in Miles"
+            oninput="updateSearchRadius()"
+          />
+          <span>mi</span>
+          <br />
+          <label>What are you searching for?</label>
+          <select id="activitySelect" onchange="changeSubcategories()">
+            <option value="eat" selected="selected">Eat</option>
+            <option value="play">Play</option>
+            <option value="relax">Relax</option>
+            <option value="shop">Shop</option>
+            <option value="explore">Explore</option>
+          </select>
+          <select id="subcategorySelect" onclick="stopCategoryScroll()" onchange="updatePoi()"></select>
+          <br>
+          <div style="display: inline;">
+          <input class="countable-input" id="minStar-input" oninput="updateStarRange()" type="number" value="0"; min="0" max= "9"/>⭐
+            to 
+          <input class="countable-input" id="maxStar-input" oninput="updateStarRange()" type="number" value="10" min="1" max= "10"/>⭐
+          </div>
+          <div style="display: inline; padding-left: 25px;">
+          <input class="countable-input" id="minPrice-input" oninput="updatePriceRange()" type="number" value="1"; min="0" max= "4"/>$
+            to 
+          <input class="countable-input" id="maxPrice-input" oninput="updatePriceRange()" type="number" value="4" min="1" max= "4"/>$
+          </div>
+          <br>
+          <span>May we suggest: <a id="location-suggestion" href="javascript:;" onclick="useSuggestion()"></a></span>
+        </div>
+      </div>
+
+      <!-- Longitude Latitude Input and Readout -->
+      <div id="lonlat-container">
+        <label for="long-input">Lon:</label>
+        <input
+          id="lon-input"
+          oninput="updateSearchLocation(this)"
+          type="number"
+          step="0.01"
+        />
+        <label for="lat-input">Lat:</label>
+        <input
+          id="lat-input"
+          oninput="updateSearchLocation(this)"
+          type="number"
+          step="0.01"
+        />
+      </div>
+    </div>
+
+    <!-- Help Button -->
+    <a href="help.html" target="_blank" rel="noopener noreferrer"><buttton id="helpButton">?</button></a>
+
+    <div id="map-container"></div>
+
+    <!-- imports javascript files -->
+    <script src="res/js/passwords.js"></script>
+    <script src="res/js/utility.js"></script>
+    <script src="res/js/dom.js"></script>
+    <script src="res/js/userLocation.js"></script>
+    <script src="res/js/map.js"></script>
+    <script src="res/js/geocoder.js"></script>
+    <script src="res/js/poi.js"></script>
+    <script src="res/js/favorites.js"></script>
+    <script src="res/js/index.js"></script>
+  </body>
+</html>
